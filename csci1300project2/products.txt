@@ -1,0 +1,50 @@
+Special Deluxe Toaster,25.25,Home Appliances
+Dell Laptop,999.99,Electronics
+Burn-Ye-Toast Toaster,11.75,Home Appliances
+Oakley Sunglasses,300.50,Sportswear
+JBL Earphones,75.10,Electronics
+OldSpice Bodywash,7.80,Personal Hygiene
+Hand Sanitizer,10.75,Health 
+Samsung Smartphone,750.45,Electronics
+elf eyeshadow,3.45,Beauty & Makeup
+The Da Vinci Code,25.00,Book
+Apple iPad,259.40,Electronics
+LG Microwave,275.00,Home Appliances
+Video Doorbell,69.99,Electronics
+White Noise Machine,17.89,Home Appliances
+Hair Dryer,54.91,Beauty & Makeup
+Power Perch,6.36,Sportswear
+Nespresso,150.00,Kitchen Appliances
+Table Lamp,125.46,Home Decor
+Camelback Bottle,15.63,Kitchen Appliances
+Diet Coke,3.53,Food & Drinks
+Alcohol Handwipes,10.75,Health 
+Dove Shampoo,5.90,Personal Hygiene
+The Hitchhiker's Guide To The Galaxy,10.20,Book
+Hardwood Dining Table,250.45,Home Decor
+Crossbody Bag,45.00,Sportswear
+Blue Light Blocking Glasses,15.99,Beauty & Makeup
+Waterproof Rain Hat,39.67,Beauty & Makeup
+Echo Dot,39.99,Electronics
+RFID Blocking Wallet,18.76,Home Appliances
+Scalp Care Brush,7.98,Personal Hygiene
+iRoller Screen Cleane,16.95,Electronics
+Silicone Baking Mat,11.19,Kitchen Appliances
+Healing Clay,14.95,Beauty & Makeup
+7-in-1 Steamer,32.97,Electronics
+False Lash Effect Mascara,4.99,Beauty & Makeup
+Waist Trainer Belt,13.32,Sportswear
+Microfiber Sheet Set,19.99,Home Decor 
+All-Season Quilted Comforter,29.99,Home Decor
+Deep Conditioning Mask,36.00,Personal Hygiene
+Smart Digital Scale,28.79,Electronics
+Pet Hair Remover Glove,11.99,Home Appliances
+Cast Iron Skillet,24.93,Kitchen Appliances
+Broom and Mop Rack,13.97,Kitchen Appliances
+Nail Polish,4.99,Beauty & Makeup
+Chesapeake Bay Candle,11.34,Home Decor
+Smart Home Camera,25.98,Electronics
+The Wonky Donkey,5.28,Book
+Rambler Tumbler,29.98,Kitchen Appliances
+Spa Bath Pillow,16.99,Personal Hygiene
+Watch Hat Beanie,15.68,Beauty & Makeup
