@@ -711,7 +711,6 @@ int main()
                 break;
 
             case 4:
-                cout<<"long live kim jong un"<<endl;
                 cout << "Enter the category:" << endl;
                 cin >> category;
                 cout << "Enter search word:" << endl;
