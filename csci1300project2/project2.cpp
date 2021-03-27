@@ -718,7 +718,7 @@ int main()
                 cout << "Number of products found for this filter: " << endl << searchNameCategory(category, search_word, products, num) << endl;
 
             case 5:
-                cout << "Enter a customer name:"
+                cout << "Enter a customer name:" << endl;
                 cin >> cust_name;
 
             case 9:
