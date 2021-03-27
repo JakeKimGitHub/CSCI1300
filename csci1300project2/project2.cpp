@@ -653,7 +653,11 @@ int main()
     string cust_name;
     int num = 0;
     int size = 50;
+    int cust_size = 100;
+    int num_customer = 0;
+    int ret_add_customer = 0;
     Product products[size];
+    Customer customers[cust_size];
     int ret = 0;
 
     while (choice != 9)
@@ -673,7 +677,7 @@ int main()
 
         switch (choice)
         {
-            case 1:
+            case 1: // Read products from file
                 cout << "Enter a product file name:" << endl;
                 cin >> filename;
                 
@@ -700,26 +704,44 @@ int main()
                 break;
                 size = num;
             
-            case 2:
+            case 2: // Print all products
                 printAllProducts(products, num);
                 break;
             
-            case 3:
+            case 3: // Product-count by category
                 cout << "Enter the category:" << endl;
                 cin >> category;
                 cout << "Total " << category << " products in the database: " << countCategory(category, products, num) << endl;
                 break;
 
-            case 4:
+            case 4: // Filter products by category, search word
                 cout << "Enter the category:" << endl;
                 cin >> category;
                 cout << "Enter search word:" << endl;
                 cin >> search_word;
                 cout << "Number of products found for this filter: " << endl << searchNameCategory(category, search_word, products, num) << endl;
 
-            case 5:
+            case 5: // Add customer
                 cout << "Enter a customer name:" << endl;
                 cin >> cust_name;
+                addCustomer(cust_name, customers, size, num_customer, cust_size);
+
+                if (ret_add_customer == -2)
+                {
+                   cout << "Database is already full. Customer cannot be added." << endl;
+                }
+                else if (ret_add_customer == -1)
+                {
+                    cout << "Customer already exists or the customerName is empty." << endl;
+                }
+                else
+                {
+                    cout << "Welcome, " << cust_name << "!" << endl;
+                }
+                
+            case 6: // Read purchases
+
+
 
             case 9:
                 cout << "Good bye!" << endl;
