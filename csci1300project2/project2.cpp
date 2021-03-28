@@ -656,7 +656,6 @@ int main()
     int cust_size = 100;
     int num_customer = 0;
     int ret_add_customer = 0;
-    int ret_read_purch = 0;
     Product products[size];
     Customer customers[cust_size];
     int ret = 0;
@@ -746,26 +745,6 @@ int main()
                 cout << "Enter the purchases file name:" << endl;
                 cin >> filename;
                 readPurchases(filename, customers, num_customer, cust_size, size);
-                
-                if (ret_read_purch == -1)
-                {
-                    cout << "Nothing saved to the database." << endl;
-                }
-                else if (ret_read_purch == -2)
-                {
-                    cout << "Database is already full. Nothing was added." << endl;
-                }
-                else if (ret_read_purch == cust_size)
-                {
-                    cout << "Database is full. Some customers may have not been added." << endl;
-                }
-                else
-                {
-                    cout << "Total customers in the database: " << ret_read_purch << endl;
-                }
-                break;
-
-
             case 9:
                 cout << "Good bye!" << endl;
                 break;
