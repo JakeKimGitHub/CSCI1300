@@ -725,6 +725,7 @@ int main()
             case 5: // Add customer
                 cout << "Enter a customer name:" << endl;
                 cin >> cust_name;
+<<<<<<< HEAD
                 addCustomer(cust_name, customers, size, num_customer, cust_size);
 
                 if (ret_add_customer == -2)
@@ -747,6 +748,8 @@ int main()
                 readPurchases(filename, customers, num_customer, cust_size, size);
 
 
+=======
+>>>>>>> 17259a808bfde745861b8188576c5a23af20cbc2
             case 9:
                 cout << "Good bye!" << endl;
                 break;
