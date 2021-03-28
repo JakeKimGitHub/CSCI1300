@@ -720,6 +720,7 @@ int main()
                 cout << "Enter search word:" << endl;
                 cin >> search_word;
                 cout << "Number of products found for this filter: " << endl << searchNameCategory(category, search_word, products, num) << endl;
+                break;
 
             case 5: // Add customer
                 cout << "Enter a customer name:" << endl;
@@ -738,9 +739,12 @@ int main()
                 {
                     cout << "Welcome, " << cust_name << "!" << endl;
                 }
+                break;
                 
             case 6: // Read purchases
-
+                cout << "Enter the purchases file name:" << endl;
+                cin >> filename;
+                readPurchases(filename, customers, num_customer, cust_size, size);
 
 
             case 9:
