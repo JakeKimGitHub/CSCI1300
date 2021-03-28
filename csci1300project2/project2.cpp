@@ -720,7 +720,6 @@ int main()
             case 5:
                 cout << "Enter a customer name:" << endl;
                 cin >> cust_name;
-
             case 9:
                 cout << "Good bye!" << endl;
                 break;
