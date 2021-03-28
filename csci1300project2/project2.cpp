@@ -797,7 +797,6 @@ int main()
             default:
                 cout << "Invalid input." << endl;
                 break;
-
         }
     }
 }
