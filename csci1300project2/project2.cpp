@@ -1,5 +1,6 @@
 // CSCI1300 Spring 2021
 // Author: Jake Kim
+// Partner: Sergio Borrego
 // Recitation: 117 – Elizabeth Spaulding and Ash Duy
 // Project 2 - Problem #11
 
@@ -754,7 +755,6 @@ int main()
                 
             case 6: // Read purchases
                 cout << "Enter the purchases file name:" << endl;
-<<<<<<< HEAD
                 getline(cin, filename);
 
                 ret_read_purch = readPurchases(filename, customers, num_customer, 100, 51);
@@ -775,32 +775,11 @@ int main()
                 {
                     cout << "Total customers in the database: " << ret_read_purch << endl << endl;
                     num_customer = ret_read_purch;
-=======
-                cin >> filename;
-                readPurchases(filename, customers, num_customer, cust_size, size);
-                
-                if (ret_read_purch == -1)
-                {
-                    cout << "Nothing saved to the database." << endl;
-                }
-                else if (ret_read_purch == -2)
-                {
-                    cout << "Database is already full. Nothing was added." << endl;
-                }
-                else if (ret_read_purch == cust_size)
-                {
-                    cout << "Database is full. Some customers may have not been added." << endl;
-                }
-                else
-                {
-                    cout << "Total customers in the database: " << ret_read_purch << endl;
->>>>>>> 7f7a812e3b4f1cd76946fe92aa60804f3272a506
                 }
                 break;
 
             case 7: // Get purchased quantity
                 cout << "Enter a customer name:" << endl;
-<<<<<<< HEAD
                 getline(cin, cust_name);
                 cout << "Enter a product name:" << endl;
                 getline(cin, prod_name);
@@ -814,33 +793,14 @@ int main()
                 else
                 {
                     cout << cust_name << " has purchased " << ret_get_purch << " of " << prod_name << endl << endl;
-=======
-                cin >> cust_name;
-                cout << "Enter a product name:" << endl;
-                cin >> prod_name;
-                getPurchasedQuantity(cust_name, prod_name, customers, products, num_customer, size);
-
-                if (ret_get_purch == -3)
-                {
-                    cout << cust_name << " or " << prod_name << " does not exist." << endl;
-                }
-                else
-                {
-                    cout << cust_name << " has purchased " << ret_get_purch << " of " << prod_name << endl;
->>>>>>> 7f7a812e3b4f1cd76946fe92aa60804f3272a506
                 }
                 break;
 
             case 8:
                 cout << "Enter a customer name:" << endl;
-<<<<<<< HEAD
                 getline(cin, cust_name);
                 getCustomerStats(cust_name, customers, num_customer, size);
                 cout << endl;
-=======
-                cin >> cust_name;
-                getCustomerStats(cust_name, customers, num_customer, size);
->>>>>>> 7f7a812e3b4f1cd76946fe92aa60804f3272a506
                 break;
 
             case 9:
