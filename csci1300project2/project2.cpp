@@ -430,6 +430,7 @@ int readPurchases(string filename, Customer customers[], int numCustomersStored,
             return -1;
         }
 
+        int s = 0;
         int i = numCustomersStored; // initialized to numCustomersStored because the data fills up the rest of the array instead of starting over
         string arr[maxCol];
         // Read lines from file
@@ -439,10 +440,12 @@ int readPurchases(string filename, Customer customers[], int numCustomersStored,
             if (line.length() > 1)
             {
                 split(line, ',', arr, maxCol);
+                s = split(line, ',', arr, maxCol);
+
 
                 customers[i].setCustomerName(arr[0]);
                 
-                for (int j = 1; j < maxCol; j++)
+                for (int j = 1; j < s; j++)
                 {
                     customers[i].setPurchasesAt(j - 1, stoi(arr[j]));
                 }
@@ -604,6 +607,10 @@ int getCustomerStats(string customerName, Customer customers[], int numCustomers
             {
                 cout << customerName << " purchased " << customers[i].getNumUniquePurchases() << " products" << endl;
                 cout << customerName << "'s average purchased quantity was " << fixed << setprecision(2) << averagePurchaseQuantity << endl;
+                for (int j = 0; j <= 49; j++)
+                {
+                    cout << customers[i].getPurchasesAt(j) << " ";
+                }
 
                 num_prod_purchased = customers[i].getNumUniquePurchases();
             }
@@ -646,21 +653,24 @@ int getCustomerStats(string customerName, Customer customers[], int numCustomers
 */
 int main()
 {
-    int choice = 0;
+    string choice;
     string filename;
     string category;
     string search_word;
     string cust_name;
+    string prod_name;
     int num = 0;
     int size = 50;
     int cust_size = 100;
     int num_customer = 0;
     int ret_add_customer = 0;
+    int ret_read_purch = 0;
+    int ret_get_purch = 0;
     Product products[size];
     Customer customers[cust_size];
     int ret = 0;
 
-    while (choice != 9)
+    while (choice != "9")
     {
         cout << "Select a numerical option:" << endl;
         cout << "======Main Menu=====" << endl;
@@ -673,78 +683,125 @@ int main()
         cout << "7. Get purchased quantity" << endl;
         cout << "8. Get customer statistics" << endl;
         cout << "9. Quit" << endl;
-        cin >> choice;
+        getline(cin, choice);
 
-        switch (choice)
+        switch (stoi(choice))
         {
             case 1: // Read products from file
                 cout << "Enter a product file name:" << endl;
-                cin >> filename;
+                getline(cin,filename);
                 
                 ret = readProducts(filename, products, num, size);
                 
                 if(ret == -1)
                 {
-                    cout << "No products saved to the database." << endl;
+                    cout << "No products saved to the database." << endl << endl;
                 }
                 else if(ret == -2)
                 {
                     ret = 50; // when it is full, the first 50 stays
-                    cout << "Database is already full. No products were added." << endl;
+                    cout << "Database is already full. No products were added." << endl << endl;
                 }
                 else if(ret == size)
                 {
-                    cout << "Database is full. Some products may have not been added." << endl;
+                    cout << "Database is full. Some products may have not been added." << endl << endl;
                 }
                 else
                 {
                     num = ret;
-                    cout << "Total products in the database: " << ret << endl;
+                    cout << "Total products in the database: " << ret << endl << endl;
                 }
                 break;
-                size = num;
+                
             
             case 2: // Print all products
                 printAllProducts(products, num);
+                cout << endl;
                 break;
             
             case 3: // Product-count by category
                 cout << "Enter the category:" << endl;
-                cin >> category;
-                cout << "Total " << category << " products in the database: " << countCategory(category, products, num) << endl;
+                getline(cin, category);
+                cout << "Total " << category << " products in the database: " << countCategory(category, products, num) << endl << endl;
                 break;
 
             case 4: // Filter products by category, search word
                 cout << "Enter the category:" << endl;
-                cin >> category;
+                getline(cin, category);
                 cout << "Enter search word:" << endl;
-                cin >> search_word;
-                cout << "Number of products found for this filter: " << endl << searchNameCategory(category, search_word, products, num) << endl;
+                getline(cin, search_word);
+                cout << "Number of products found for this filter: " << searchNameCategory(category, search_word, products, num) << endl << endl;
                 break;
 
             case 5: // Add customer
                 cout << "Enter a customer name:" << endl;
-                cin >> cust_name;
+                getline(cin, cust_name);
                 addCustomer(cust_name, customers, size, num_customer, cust_size);
 
                 if (ret_add_customer == -2)
                 {
-                   cout << "Database is already full. Customer cannot be added." << endl;
+                   cout << "Database is already full. Customer cannot be added." << endl << endl;
                 }
                 else if (ret_add_customer == -1)
                 {
-                    cout << "Customer already exists or the customerName is empty." << endl;
+                    cout << "Customer already exists or the customerName is empty." << endl << endl;
                 }
                 else
                 {
-                    cout << "Welcome, " << cust_name << "!" << endl;
+                    cout << "Welcome, " << cust_name << "!" << endl << endl;
                 }
                 break;
                 
             case 6: // Read purchases
                 cout << "Enter the purchases file name:" << endl;
-                cin >> filename;
-                readPurchases(filename, customers, num_customer, cust_size, size);
+                getline(cin, filename);
+
+                ret_read_purch = readPurchases(filename, customers, num_customer, 100, 51);
+                
+                if (ret_read_purch == -1)
+                {
+                    cout << "Nothing saved to the database." << endl << endl;
+                }
+                else if (ret_read_purch == -2)
+                {
+                    cout << "Database is already full. Nothing was added." << endl << endl;
+                }
+                else if (ret_read_purch == cust_size)
+                {
+                    cout << "Database is full. Some customers may have not been added." << endl << endl;
+                }
+                else
+                {
+                    cout << "Total customers in the database: " << ret_read_purch << endl << endl;
+                    num_customer = ret_read_purch;
+                }
+                break;
+
+            case 7: // Get purchased quantity
+                cout << "Enter a customer name:" << endl;
+                getline(cin, cust_name);
+                cout << "Enter a product name:" << endl;
+                getline(cin, prod_name);
+                
+                ret_get_purch = getPurchasedQuantity(cust_name, prod_name, customers, products, num_customer, size);
+
+                if (ret_get_purch == -3)
+                {
+                    cout << cust_name << " or " << prod_name << " does not exist." << endl << endl;
+                }
+                else
+                {
+                    cout << cust_name << " has purchased " << ret_get_purch << " of " << prod_name << endl << endl;
+                }
+                break;
+
+            case 8:
+                cout << "Enter a customer name:" << endl;
+                getline(cin, cust_name);
+                getCustomerStats(cust_name, customers, num_customer, size);
+                cout << endl;
+                break;
+
             case 9:
                 cout << "Good bye!" << endl;
                 break;

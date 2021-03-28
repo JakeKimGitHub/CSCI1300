@@ -1,5 +1,6 @@
 // CSCI1300 Spring 2021
 // Author: Jake Kim
+// Partner: Sergio Borrego
 // Recitation: 117 – Elizabeth Spaulding and Ash Duy
 // Project 2 - Problem #7
 
