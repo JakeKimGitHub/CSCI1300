@@ -651,12 +651,14 @@ int main()
     string category;
     string search_word;
     string cust_name;
+    string prod_name;
     int num = 0;
     int size = 50;
     int cust_size = 100;
     int num_customer = 0;
     int ret_add_customer = 0;
     int ret_read_purch = 0;
+    int ret_get_purch = 0;
     Product products[size];
     Customer customers[cust_size];
     int ret = 0;
@@ -765,6 +767,28 @@ int main()
                 }
                 break;
 
+            case 7: // Get purchased quantity
+                cout << "Enter a customer name:" << endl;
+                cin >> cust_name;
+                cout << "Enter a product name:" << endl;
+                cin >> prod_name;
+                getPurchasedQuantity(cust_name, prod_name, customers, products, num_customer, size);
+
+                if (ret_get_purch == -3)
+                {
+                    cout << cust_name << " or " << prod_name << " does not exist." << endl;
+                }
+                else
+                {
+                    cout << cust_name << " has purchased " << ret_get_purch << " of " << prod_name << endl;
+                }
+                break;
+
+            case 8:
+                cout << "Enter a customer name:" << endl;
+                cin >> cust_name;
+                getCustomerStats(cust_name, customers, num_customer, size);
+                break;
 
             case 9:
                 cout << "Good bye!" << endl;
