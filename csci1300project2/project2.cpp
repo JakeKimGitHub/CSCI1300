@@ -702,10 +702,12 @@ int main()
                 {
                     ret = 50; // when it is full, the first 50 stays
                     cout << "Database is already full. No products were added." << endl << endl;
+                    num = ret;
                 }
                 else if(ret == size)
                 {
                     cout << "Database is full. Some products may have not been added." << endl << endl;
+                    num = ret;
                 }
                 else
                 {
